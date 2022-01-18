@@ -1,0 +1,43 @@
+{
+  "version": "Head and Neck v1",
+  "required_modalities_for_patient":[
+    "CT",
+    "RTSTRUCT",
+    "RTDOSE"
+  ],
+  "required_modalities_for_patient_plus_rtplan":[
+    "CT",
+    "RTSTRUCT",
+    "RTDOSE",
+    "RTPLAN",
+    "PT"
+  ],
+  "study_desc_should_not_contain":[
+    "lung","breast","prostate","rectum"
+  ],
+  "study_desc_may_contain":["head"
+  ],
+  "possibilities":[
+    "ctv",
+    "gtv",
+    "itv",
+    "ptv",
+    "heart",
+    "lung",
+    "tumour"
+  ],
+  "imagesummaries": "../imagesummaries/",
+  "patientnotesdir": "../patientnotes/",
+  "matlabfiles": "../matlabfiles/",
+  "picklefiles": "../picklefiles/",
+  "datadirectory": "../data/",
+  "thequarantine":"../quarantine/",
+  "link_to_ids": "../ids/hn_ids_test.csv",
+  "ipport": "http://localhost:8042",
+  "username": "",
+  "password": "",
+  "CONNECTIONS": 30,
+  "TIMEOUT": 2500,
+  "suspicious_max_dose_lower_bound":38,
+  "suspicious_max_dose_upper_bound":120
+}

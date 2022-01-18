@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROIP &mdash; PDCP 0.0.0 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ReadPatientImagingData" href="PDCP.ReadPatientImagingData.html" />
+    <link rel="prev" title="DVH" href="PDCP.DVH.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> PDCP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to PDCP’s documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#overview-version-0-0-1">Overview (version 0.0.1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#what-can-pdcp-do">What can PDCP do?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#next-steps">Next Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#selecting-modalities-in-a-patient-study">Selecting Modalities in a Patient Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#selecting-a-patient-study">Selecting a Patient Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#example-data-collection">Example Data Collection</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html#pdcp">PDCP</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PDCP.DVH.html">DVH</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ROIP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PDCP.ReadPatientImagingData.html">ReadPatientImagingData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PDCP.patientImaging.html">patientImaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PDCP.patientImagingCR.html">patientImagingCR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PDCP.patientImagingCRD.html">patientImagingCRD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PDCP.patientImagingCRDP.html">patientImagingCRDP</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="PDCP.DVH.html">DVH</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ROIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PDCP.ReadPatientImagingData.html">ReadPatientImagingData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PDCP.patientImaging.html">patientImaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PDCP.patientImagingCR.html">patientImagingCR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PDCP.patientImagingCRD.html">patientImagingCRD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PDCP.patientImagingCRDP.html">patientImagingCRDP</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PDCP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>ROIP</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/PDCP.ROIP.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="roip">
+<h1>ROIP<a class="headerlink" href="#roip" title="Permalink to this headline"></a></h1>
+<dl class="class">
+<dt id="PDCP.ROIP">
+<em class="property">class </em><code class="sig-prename descclassname">PDCP.</code><code class="sig-name descname">ROIP</code><span class="sig-paren">(</span><em class="sig-param">ptype='breast'</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.ROIP" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class to work with the patient’s organs at risk (OARs) and target volumes (TV)</p>
+<p class="rubric">Methods Summary</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.ROIP.generate_slice_roi" title="PDCP.ROIP.generate_slice_roi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_slice_roi</span></code></a>(roiname, maskname, dim, …)</p></td>
+<td><p>A function used to generate the central slice of an OAR or TV.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.ROIP.generate_slices_patient_rois" title="PDCP.ROIP.generate_slices_patient_rois"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_slices_patient_rois</span></code></a>(dim)</p></td>
+<td><p>A function used to generate 2d images of slices with the highest number of contoured pixels, for all the ROI structures.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.ROIP.load_central_slices" title="PDCP.ROIP.load_central_slices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_central_slices</span></code></a>([notesdir, pids, dim, …])</p></td>
+<td><p>This is a function that generates the patients list of OARs and TV.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.ROIP.load_data_from_file" title="PDCP.ROIP.load_data_from_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_data_from_file</span></code></a>(patientsnotesdirectory, …)</p></td>
+<td><p>A function that loads patients CT and masks from the directory.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.ROIP.load_patient_central_slices" title="PDCP.ROIP.load_patient_central_slices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_patient_central_slices</span></code></a>(PatId[, …])</p></td>
+<td><p>This function is used to prepare a dataframe that contains the patients rois and its corresponding images locations.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Documentation</p>
+<dl class="method">
+<dt id="PDCP.ROIP.generate_slice_roi">
+<code class="sig-name descname">generate_slice_roi</code><span class="sig-paren">(</span><em class="sig-param">roiname</em>, <em class="sig-param">maskname</em>, <em class="sig-param">dim</em>, <em class="sig-param">thenumber</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.ROIP.generate_slice_roi" title="Permalink to this definition"></a></dt>
+<dd><p>A function used to generate the central slice of an OAR or TV.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>roiname</strong> (<em>str</em>) – name of the OAR or TV as it was in the plan</p></li>
+<li><p><strong>maskname</strong> (<em>str</em>) – represents the key of the mask in the dictionary that contains the patients masks.</p></li>
+<li><p><strong>dim</strong> (<em>int</em>) – The dimension on which the slice to to be created (x,y,z).</p></li>
+<li><p><strong>thenumber</strong> (<em>int</em>) – The number of the roi in the list of rois associated with the patient plan. the main reason behind using this is to avoid overriding some structures with duplicates being obtained.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>deta</strong> (<em>str</em>) – path to the generated numpy array that contains the positional features.</p></li>
+<li><p><strong>ida</strong> (<em>str</em>) – path to the generated slice</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.ROIP.generate_slices_patient_rois">
+<code class="sig-name descname">generate_slices_patient_rois</code><span class="sig-paren">(</span><em class="sig-param">dim</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.ROIP.generate_slices_patient_rois" title="Permalink to this definition"></a></dt>
+<dd><p>A function used to generate 2d images of slices with the highest number of contoured pixels, for all the ROI structures.
+Function load_data_from file should be executed before this function.
+This function can be used to review some patients OARs and TV</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dim</strong> (<em>int</em>) – the targeted dimension (can be 0,1, or 2)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.ROIP.load_central_slices">
+<em class="property">static </em><code class="sig-name descname">load_central_slices</code><span class="sig-paren">(</span><em class="sig-param">notesdir='../../Breast_dosimetry_data/patientnotes/'</em>, <em class="sig-param">pids=[]</em>, <em class="sig-param">dim='x'</em>, <em class="sig-param">categorize=True</em>, <em class="sig-param">datatype='breast'</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.ROIP.load_central_slices" title="Permalink to this definition"></a></dt>
+<dd><p>This is a function that generates the patients list of OARs and TV.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>notesdir</strong> (<em>str</em>) – path to patients notes directory</p></li>
+<li><p><strong>pids</strong> (<em>list</em>) – if a list of patients is needed, not all. Otherwise keep empty.</p></li>
+<li><p><strong>dim</strong> (<em>str</em>) – dimension (x,y, or z)</p></li>
+<li><p><strong>categorize</strong> (<em>bool</em>) – a boolean function to categorize the roi names.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>df</strong> (<em>pandas dataframe</em>) – pandas dataframe that contains the patient ROIs and corresponding images/details paths.</p></li>
+<li><p><strong>succ_patients</strong> (<em>list</em>) – A list of successfully loaded patients</p></li>
+<li><p><strong>exec_patients</strong> (<em>list</em>) – A list of excluded patients.</p></li>
+<li><p><strong>not_found</strong> (<em>list</em>) – patients whose notes were not found.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.ROIP.load_data_from_file">
+<code class="sig-name descname">load_data_from_file</code><span class="sig-paren">(</span><em class="sig-param">patientsnotesdirectory</em>, <em class="sig-param">patientdirectory</em>, <em class="sig-param">pid</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.ROIP.load_data_from_file" title="Permalink to this definition"></a></dt>
+<dd><p>A function that loads patients CT and masks from the directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>patientsnotesdirectory</strong> (<em>str</em>) – patient notes directory</p></li>
+<li><p><strong>patientdirectory</strong> (<em>str</em>) – patient data directory</p></li>
+<li><p><strong>pid</strong> (<em>int</em>) – patient id</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.ROIP.load_patient_central_slices">
+<em class="property">static </em><code class="sig-name descname">load_patient_central_slices</code><span class="sig-paren">(</span><em class="sig-param">PatId</em>, <em class="sig-param">notesdir='../../Breast_dosimetry_data/patientnotes/'</em>, <em class="sig-param">dim='x'</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.ROIP.load_patient_central_slices" title="Permalink to this definition"></a></dt>
+<dd><p>This function is used to prepare a dataframe that contains the patients rois and its corresponding images locations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>PatId</strong> (<em>int</em>) – patient id</p></li>
+<li><p><strong>notesdir</strong> (<em>str</em>) – path to patients directory</p></li>
+<li><p><strong>dim</strong> (<em>str</em>) – dimension (x,y, or z)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>df</strong> – pandas dataframe that contains the patient ROIs and corresponding images/details paths.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="PDCP.DVH.html" class="btn btn-neutral float-left" title="DVH" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PDCP.ReadPatientImagingData.html" class="btn btn-neutral float-right" title="ReadPatientImagingData" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Ali Haidar.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

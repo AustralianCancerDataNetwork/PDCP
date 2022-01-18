@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>patientImaging &mdash; PDCP 0.0.0 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="patientImagingCR" href="PDCP.patientImagingCR.html" />
+    <link rel="prev" title="ReadPatientImagingData" href="PDCP.ReadPatientImagingData.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> PDCP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to PDCP’s documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#overview-version-0-0-1">Overview (version 0.0.1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#what-can-pdcp-do">What can PDCP do?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#next-steps">Next Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#selecting-modalities-in-a-patient-study">Selecting Modalities in a Patient Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#selecting-a-patient-study">Selecting a Patient Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#example-data-collection">Example Data Collection</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html#pdcp">PDCP</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PDCP.DVH.html">DVH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PDCP.ROIP.html">ROIP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PDCP.ReadPatientImagingData.html">ReadPatientImagingData</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">patientImaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PDCP.patientImagingCR.html">patientImagingCR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PDCP.patientImagingCRD.html">patientImagingCRD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PDCP.patientImagingCRDP.html">patientImagingCRDP</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="PDCP.DVH.html">DVH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PDCP.ROIP.html">ROIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PDCP.ReadPatientImagingData.html">ReadPatientImagingData</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">patientImaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PDCP.patientImagingCR.html">patientImagingCR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PDCP.patientImagingCRD.html">patientImagingCRD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PDCP.patientImagingCRDP.html">patientImagingCRDP</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PDCP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>patientImaging</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/PDCP.patientImaging.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="patientimaging">
+<h1>patientImaging<a class="headerlink" href="#patientimaging" title="Permalink to this headline"></a></h1>
+<dl class="class">
+<dt id="PDCP.patientImaging">
+<em class="property">class </em><code class="sig-prename descclassname">PDCP.</code><code class="sig-name descname">patientImaging</code><span class="sig-paren">(</span><em class="sig-param">codesconfig=None</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class that contains all the required functions to prepare and process patient records from an Orthanc server.</p>
+<p class="rubric">Methods Summary</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.adapt_dataset_from_bytes" title="PDCP.patientImaging.adapt_dataset_from_bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adapt_dataset_from_bytes</span></code></a>(blob)</p></td>
+<td><p>A function that changes a bytes array into a pydicom FileDataset</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.check_if_organs_in_rtstruct" title="PDCP.patientImaging.check_if_organs_in_rtstruct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_if_organs_in_rtstruct</span></code></a>(list_of_organs)</p></td>
+<td><p>A function that checks if a list of organs is not found in the rtstruct</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.collect_pids_orthanc" title="PDCP.patientImaging.collect_pids_orthanc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">collect_pids_orthanc</span></code></a>([codesconfig, …])</p></td>
+<td><p>Send requests to the orthanc server to collect patient ids, and save outputs to a csv file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.export_2_matlab" title="PDCP.patientImaging.export_2_matlab"><code class="xref py py-obj docutils literal notranslate"><span class="pre">export_2_matlab</span></code></a>(filename, patdict)</p></td>
+<td><p>A function to save the dictionary generated into a matlab file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.export_2_pickle" title="PDCP.patientImaging.export_2_pickle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">export_2_pickle</span></code></a>(filename, patdict)</p></td>
+<td><p>A function to save the dictionary generated into a pickle file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.generate_imaging_dataframe_threading" title="PDCP.patientImaging.generate_imaging_dataframe_threading"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_imaging_dataframe_threading</span></code></a>(…[, save])</p></td>
+<td><p>This function targets the Orthanc server and retrieves the summaries of all the patient related instances in the server to a pandas dataframe.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.generate_orthanc_files_summaries" title="PDCP.patientImaging.generate_orthanc_files_summaries"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_orthanc_files_summaries</span></code></a>(…)</p></td>
+<td><p>A function that collects a set of patients images summaries from the orthanc server.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.generate_patients_data" title="PDCP.patientImaging.generate_patients_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_patients_data</span></code></a>(firstversion)</p></td>
+<td><p>A function that collects a set of patients required and verified files (CT slices, rt structs, etc.) from the orthanc server.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.get" title="PDCP.patientImaging.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>(orthanc, adict)</p></td>
+<td><p>An abstract function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.get_ct_nifti" title="PDCP.patientImaging.get_ct_nifti"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ct_nifti</span></code></a>(adict, notes)</p></td>
+<td><p>A function that creates CT nifti file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.get_ct_threading" title="PDCP.patientImaging.get_ct_threading"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ct_threading</span></code></a>(orthanc, adict, notes)</p></td>
+<td><p>A function that collects the patient’s CT instances through a set of threads.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.get_instance_details" title="PDCP.patientImaging.get_instance_details"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_instance_details</span></code></a>(orthanc, …)</p></td>
+<td><p>A function that retrieves an orthanc file simplified tags associated with an instance identifier.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.get_masks_nifti" title="PDCP.patientImaging.get_masks_nifti"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_masks_nifti</span></code></a>(adict, notes)</p></td>
+<td><p>A function that uses a convert RTSTRUCT function developed by RF &amp; PC to convert rt struct ROIs to nifti masks.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.get_pid" title="PDCP.patientImaging.get_pid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_pid</span></code></a>(orthanc, orthanc_identifier)</p></td>
+<td><p>Get the patient id from the orthanc server.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.get_rtdoses" title="PDCP.patientImaging.get_rtdoses"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_rtdoses</span></code></a>(orthanc, adict, notes)</p></td>
+<td><p>A function that retrieves the patients associated RTDOSES with the selected study.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.get_rtplan" title="PDCP.patientImaging.get_rtplan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_rtplan</span></code></a>(orthanc, adict, notes)</p></td>
+<td><p>A function that retrieves the patients associated RTPLAN.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.get_rtstruct" title="PDCP.patientImaging.get_rtstruct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_rtstruct</span></code></a>(orthanc, adict, notes)</p></td>
+<td><p>A function that collects the patient rt struct files.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.imagefile_summary" title="PDCP.patientImaging.imagefile_summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imagefile_summary</span></code></a>(patient_id, df)</p></td>
+<td><p>A function that summarizes the records in a patient pandas dataframe</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.imagefiles_summaries" title="PDCP.patientImaging.imagefiles_summaries"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imagefiles_summaries</span></code></a>(thedir)</p></td>
+<td><p>A function that reloads all the patients summaries into a dataframe.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.load" title="PDCP.patientImaging.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>(pid, notes, df, ctnifti_path, …)</p></td>
+<td><p>An abstract function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.load_ct_nifti_2_numpyarray" title="PDCP.patientImaging.load_ct_nifti_2_numpyarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_ct_nifti_2_numpyarray</span></code></a>(adict, notes)</p></td>
+<td><p>A function used to load the patient CT nifti file into a 3D numpy array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.load_doses_2_numpyarray" title="PDCP.patientImaging.load_doses_2_numpyarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_doses_2_numpyarray</span></code></a>(adict, notes)</p></td>
+<td><p>A function used to load the patient dicom RTDOSES to a list of 3D numpy arrays.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.load_nifti_mask_2_numpyarray" title="PDCP.patientImaging.load_nifti_mask_2_numpyarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_nifti_mask_2_numpyarray</span></code></a>(pid, …)</p></td>
+<td><p>A function used to load a patient mask into a 3D numpy array</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.load_nifti_masks" title="PDCP.patientImaging.load_nifti_masks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_nifti_masks</span></code></a>(adict, notes)</p></td>
+<td><p>A function used to load the patient nifti masks to a list of 3D numpy arrays.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.load_roi_names_from_rtstuct" title="PDCP.patientImaging.load_roi_names_from_rtstuct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_roi_names_from_rtstuct</span></code></a>(rtstruct_path, notes)</p></td>
+<td><p>A function that can be used to extract ROI names from the patient rtstruct file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.load_url" title="PDCP.patientImaging.load_url"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_url</span></code></a>(url)</p></td>
+<td><p>A function that uses the requests module to target the orthanc server.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.loadpatientnotes" title="PDCP.patientImaging.loadpatientnotes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loadpatientnotes</span></code></a>(pid)</p></td>
+<td><p>A function that loads the patient notes based on the patient’s identifier.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.prepare_patient_directory" title="PDCP.patientImaging.prepare_patient_directory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_patient_directory</span></code></a>(adict[, remove_old])</p></td>
+<td><p>A function that prepares the patient directories.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.purge" title="PDCP.patientImaging.purge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">purge</span></code></a>(adir, pattern)</p></td>
+<td><p>A function that removes any file with a keyword in the variable pattern from a directory.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.recommendation" title="PDCP.patientImaging.recommendation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recommendation</span></code></a>(patientnotes)</p></td>
+<td><p>A function that recommends the patient inclusion in the study based on a list of patient notes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.remove_phantom_studies" title="PDCP.patientImaging.remove_phantom_studies"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_phantom_studies</span></code></a>(df, patient_notes)</p></td>
+<td><p>A function that identifies phantom studies and removes them.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.remove_unused_rtstructs" title="PDCP.patientImaging.remove_unused_rtstructs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_unused_rtstructs</span></code></a>(df, notes)</p></td>
+<td><p>A function that removes rtstructs with no target volumes related to any of the possible studies.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.savepatientnotes" title="PDCP.patientImaging.savepatientnotes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">savepatientnotes</span></code></a>(pid, thekey, patientnotes)</p></td>
+<td><p>A function that adds a list of patient notes with a key to the patient notes JSON file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.search_for_code" title="PDCP.patientImaging.search_for_code"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_for_code</span></code></a>(notes, code)</p></td>
+<td><p>A function that searches for a code in a list of notes associated with a patient</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.select_and_combine_dosegrids" title="PDCP.patientImaging.select_and_combine_dosegrids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_and_combine_dosegrids</span></code></a>(doseGrids, notes)</p></td>
+<td><p>A function used to select the dose grids.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#PDCP.patientImaging.verify_initial" title="PDCP.patientImaging.verify_initial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verify_initial</span></code></a>(PatId, notes)</p></td>
+<td><p>A function that checks the dataframe that summarizes patient imaging files (resulted from generate_imaging_dataframe_threading()).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#PDCP.patientImaging.verify_study" title="PDCP.patientImaging.verify_study"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verify_study</span></code></a>(df, notes[, modality])</p></td>
+<td><p>Within this function, the links between different modalities are identified to find connections.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Documentation</p>
+<dl class="method">
+<dt id="PDCP.patientImaging.adapt_dataset_from_bytes">
+<code class="sig-name descname">adapt_dataset_from_bytes</code><span class="sig-paren">(</span><em class="sig-param">blob</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.adapt_dataset_from_bytes" title="Permalink to this definition"></a></dt>
+<dd><p>A function that changes a bytes array into a pydicom FileDataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>blob</strong> (<em>bytes array</em>) – a str that consists of bytest</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>dataset</strong> – A pydicom object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>FileDataset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.check_if_organs_in_rtstruct">
+<code class="sig-name descname">check_if_organs_in_rtstruct</code><span class="sig-paren">(</span><em class="sig-param">list_of_organs</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.check_if_organs_in_rtstruct" title="Permalink to this definition"></a></dt>
+<dd><p>A function that checks if a list of organs is not found in the rtstruct</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>list_of_organs</strong> (<em>list of organs</em>) – the list of organs found in the rtstruct and to be checked.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>boolean</strong> – a boolean value to indicate that the rtstruct contain usable target volumes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.collect_pids_orthanc">
+<em class="property">static </em><code class="sig-name descname">collect_pids_orthanc</code><span class="sig-paren">(</span><em class="sig-param">codesconfig=None</em>, <em class="sig-param">outputcsv='final_ids_remoteorthanc.csv'</em>, <em class="sig-param">saveids_asstr=True</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.collect_pids_orthanc" title="Permalink to this definition"></a></dt>
+<dd><p>Send requests to the orthanc server to collect patient ids, and save outputs to a csv file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>codesconfig</strong> (<em>dict</em>) – configuration file with details about the targeted cohort.</p></li>
+<li><p><strong>outputcsv</strong> (<em>str</em>) – path to the location of the output file.</p></li>
+<li><p><strong>saveids_asstr</strong> (<em>bool</em>) – a boolean to save the retrived ids as strings.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.export_2_matlab">
+<code class="sig-name descname">export_2_matlab</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">patdict</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.export_2_matlab" title="Permalink to this definition"></a></dt>
+<dd><p>A function to save the dictionary generated into a matlab file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.export_2_pickle">
+<code class="sig-name descname">export_2_pickle</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">patdict</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.export_2_pickle" title="Permalink to this definition"></a></dt>
+<dd><p>A function to save the dictionary generated into a pickle file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.generate_imaging_dataframe_threading">
+<code class="sig-name descname">generate_imaging_dataframe_threading</code><span class="sig-paren">(</span><em class="sig-param">orthanc</em>, <em class="sig-param">OrthancId</em>, <em class="sig-param">PatId</em>, <em class="sig-param">save=True</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.generate_imaging_dataframe_threading" title="Permalink to this definition"></a></dt>
+<dd><p>This function targets the Orthanc server and retrieves the summaries of all the patient related instances in the server to a pandas dataframe.</p>
+<p>This function uses threading to get the patient’s summaries</p>
+<p>while collecting the studies, any study that does not contain all the required modalities listed in codes function will be removed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>orthanc</strong> (<em>pyorthanc Orthanc variable</em>) – connection to the orthanc (pyorthanc variable). Not used (requests module used instead). Left as parameter if users wanted to change.</p></li>
+<li><p><strong>OrthancId</strong> (<em>str</em>) – Patient orthanc identifier</p></li>
+<li><p><strong>PatId</strong> (<em>str/int</em>) – Patient identifier</p></li>
+<li><p><strong>save</strong> (<em>boolean</em>) – A variable to indicate if to save the patient files. default True</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>df</strong> (<em>pandas dataframe</em>) – A pandas dataframe that contains the summaries of the patients instances with simplified tags</p></li>
+<li><p><strong>comment</strong> (<em>str</em>) – A str with a comment that determines if the image summaries collection was successful (_SUCCESS) or not (_ERROR, _PATIENTFILESNOTFOUND)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.generate_orthanc_files_summaries">
+<code class="sig-name descname">generate_orthanc_files_summaries</code><span class="sig-paren">(</span><em class="sig-param">orthanc_ids</em>, <em class="sig-param">patients_ids</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.generate_orthanc_files_summaries" title="Permalink to this definition"></a></dt>
+<dd><p>A function that collects a set of patients images summaries from the orthanc server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>orthanc_ids</strong> (<em>list</em>) – a list of orthanc ids</p></li>
+<li><p><strong>patients_ids</strong> (<em>list</em>) – a list of patient ids</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>pids</strong> (<em>list</em>) – the patient ids</p></li>
+<li><p><strong>comments</strong> (<em>list</em>) – a list of the patients comments (_SUCCESS, _ERROR, or _PATIENTIMAGESNOTFOUND)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.generate_patients_data">
+<code class="sig-name descname">generate_patients_data</code><span class="sig-paren">(</span><em class="sig-param">firstversion</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.generate_patients_data" title="Permalink to this definition"></a></dt>
+<dd><p>A function that collects a set of patients required and verified files (CT slices, rt structs, etc.) from the orthanc server.</p>
+<p>It is expected that for each child, another function is created.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">orthanc</em>, <em class="sig-param">adict</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.get" title="Permalink to this definition"></a></dt>
+<dd><p>An abstract function.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.get_ct_nifti">
+<code class="sig-name descname">get_ct_nifti</code><span class="sig-paren">(</span><em class="sig-param">adict</em>, <em class="sig-param">notes</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.get_ct_nifti" title="Permalink to this definition"></a></dt>
+<dd><p>A function that creates CT nifti file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adict</strong> (<em>dictionary</em>) – a dictionary with a key to the CT instances directory i.e. adict[‘ct_directory’]</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – a list of patient notes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>notes</strong> – a list of the patient’s notes with updates about the CT nifti file generation task.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.get_ct_threading">
+<code class="sig-name descname">get_ct_threading</code><span class="sig-paren">(</span><em class="sig-param">orthanc</em>, <em class="sig-param">adict</em>, <em class="sig-param">notes</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.get_ct_threading" title="Permalink to this definition"></a></dt>
+<dd><p>A function that collects the patient’s CT instances through a set of threads.
+With threading the returned files might return out of order. At the same time, the instances associated with the CT might not be in the correct order.
+For this reason, each set of CT instances is checked based on SliceLocation and PatientImagePosition tags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>orthanc</strong> (<em>pyorthanc Orthanc instance</em>) – a pyorthanc Orthanc class instance, used to get the CT instance identifiers.</p></li>
+<li><p><strong>adict</strong> (<em>dictionary</em>) – a dict with the paths to patient files location (where to save CT instances).</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – a list of patient notes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>notes</strong> – a list of the patient’s notes with updates about the CT collection task, if any.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.get_instance_details">
+<code class="sig-name descname">get_instance_details</code><span class="sig-paren">(</span><em class="sig-param">orthanc</em>, <em class="sig-param">instance_identifier</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.get_instance_details" title="Permalink to this definition"></a></dt>
+<dd><p>A function that retrieves an orthanc file simplified tags associated with an instance identifier.
+Uses the request module in python to retrieve a bytes array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>orthanc</strong> (<em>pyorthanc Orthanc variable</em>) – Connection to the orthanc details (not used can be empty/ used orginally with the first version). Left for the user if he/she wants to use later without using the requests module.</p></li>
+<li><p><strong>instance_identifier</strong> (<em>str</em>) – Instance orthanc identifier</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>dictionary</strong> (<em>dictionary</em>) – A dictionary with the simplified tag associated with the instance</p></li>
+<li><p><strong>status</strong> (<em>int</em>) – An integer to indicate if the request to the server was successful. i.e. 200,401,etc.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.get_masks_nifti">
+<code class="sig-name descname">get_masks_nifti</code><span class="sig-paren">(</span><em class="sig-param">adict</em>, <em class="sig-param">notes</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.get_masks_nifti" title="Permalink to this definition"></a></dt>
+<dd><p>A function that uses a convert RTSTRUCT function developed by RF &amp; PC to convert rt struct ROIs to nifti masks.
+It saves the created files to the patient directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adict</strong> (<em>dictionary</em>) – A dictionary that contains the patient details.</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – a list of patient notes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>notes</strong> – a list of the patient’s notes with updates about the masks generation process.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.get_pid">
+<em class="property">static </em><code class="sig-name descname">get_pid</code><span class="sig-paren">(</span><em class="sig-param">orthanc</em>, <em class="sig-param">orthanc_identifier</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.get_pid" title="Permalink to this definition"></a></dt>
+<dd><p>Get the patient id from the orthanc server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>orthanc</strong> (<em>pyorthanc instance</em>) – a pyorthanc instance with connections to the orthanc server.</p></li>
+<li><p><strong>orthanc_identifier</strong> (<em>str</em>) – Orthanc identifier</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>patient_id</strong> (<em>str/int</em>) – the patient id</p></li>
+<li><p><strong>orthanc_identifier</strong> (<em>str</em>) – Orthanc identifier</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.get_rtdoses">
+<code class="sig-name descname">get_rtdoses</code><span class="sig-paren">(</span><em class="sig-param">orthanc</em>, <em class="sig-param">adict</em>, <em class="sig-param">notes</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.get_rtdoses" title="Permalink to this definition"></a></dt>
+<dd><p>A function that retrieves the patients associated RTDOSES with the selected study. It saves the collected files
+to the patient directory pid/RTDOSE/UID.dcm. It also exports the file to a nifti file. It should be noted that in the RTDOSES
+all the files will be saved in the same folder, unlike the RTSTRUCTS where each struct will have a seperate folder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adict</strong> (<em>dictionary</em>) – A dictionary that contains the patient details.</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – a list of patient notes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>notes</strong> – a list of the patient’s notes with updates about the RTDOSE retrieve task.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.get_rtplan">
+<code class="sig-name descname">get_rtplan</code><span class="sig-paren">(</span><em class="sig-param">orthanc</em>, <em class="sig-param">adict</em>, <em class="sig-param">notes</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.get_rtplan" title="Permalink to this definition"></a></dt>
+<dd><p>A function that retrieves the patients associated RTPLAN.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adict</strong> (<em>dictionary</em>) – A dictionary that contains the patient details.</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – a list of patient notes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>notes</strong> – a list of the patient’s notes with updates about the RTDOSE retrieve task.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.get_rtstruct">
+<code class="sig-name descname">get_rtstruct</code><span class="sig-paren">(</span><em class="sig-param">orthanc</em>, <em class="sig-param">adict</em>, <em class="sig-param">notes</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.get_rtstruct" title="Permalink to this definition"></a></dt>
+<dd><p>A function that collects the patient rt struct files. RTSTRUCTS collected based on instances</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>orthanc</strong> (<em>pyorthanc Orthanc instance</em>) – not used anymore, used originally to retrieve the rtstructs, before moving to requests.</p></li>
+<li><p><strong>adict</strong> (<em>dictionary</em>) – a dictionary with a key to the path to save the retieved RTSTRUCTS i.e. adict[‘rtstructs_directory’]</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – a list of patient notes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>notes</strong> – a list of the patient’s notes with updates about the rtstruct collection task.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.imagefile_summary">
+<code class="sig-name descname">imagefile_summary</code><span class="sig-paren">(</span><em class="sig-param">patient_id</em>, <em class="sig-param">df</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.imagefile_summary" title="Permalink to this definition"></a></dt>
+<dd><p>A function that summarizes the records in a patient pandas dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>patient_id</strong> (<em>int/str</em>) – patient identifier</p></li>
+<li><p><strong>df</strong> (<em>pandas dataframe</em>) – a dataframe with the patient’s image summaries saved as rows in the dataframe</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>di</strong> – a dictionary with the dataframe summary (i.e. number of CTs, number of studies)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.imagefiles_summaries">
+<code class="sig-name descname">imagefiles_summaries</code><span class="sig-paren">(</span><em class="sig-param">thedir</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.imagefiles_summaries" title="Permalink to this definition"></a></dt>
+<dd><p>A function that reloads all the patients summaries into a dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>thedir</strong> (<em>str</em>) – path to the directory with the patients files summaries.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>thesummary</strong> – a dataframe with the patients files summaries (i.e number of CTs, number of studies, etc.)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.load">
+<code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param">pid</em>, <em class="sig-param">notes</em>, <em class="sig-param">df</em>, <em class="sig-param">ctnifti_path</em>, <em class="sig-param">masks_directory</em>, <em class="sig-param">rtdoses_directory</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.load" title="Permalink to this definition"></a></dt>
+<dd><p>An abstract function.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.load_ct_nifti_2_numpyarray">
+<code class="sig-name descname">load_ct_nifti_2_numpyarray</code><span class="sig-paren">(</span><em class="sig-param">adict</em>, <em class="sig-param">notes</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.load_ct_nifti_2_numpyarray" title="Permalink to this definition"></a></dt>
+<dd><p>A function used to load the patient CT nifti file into a 3D numpy array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adict</strong> (<em>dict</em>) – A dictionary that contains the patient details.</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – a list of patient notes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>thect</strong> (<em>3D numpy array</em>) – The collected 3D array</p></li>
+<li><p><strong>spacing</strong> (<em>tuple</em>) – The ct image spacing, empty array is returned if an error occured.</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – a list of the patient’s notes with updates about the RTSTRUCT ROIs.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.load_doses_2_numpyarray">
+<code class="sig-name descname">load_doses_2_numpyarray</code><span class="sig-paren">(</span><em class="sig-param">adict</em>, <em class="sig-param">notes</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.load_doses_2_numpyarray" title="Permalink to this definition"></a></dt>
+<dd><p>A function used to load the patient dicom RTDOSES to a list of 3D numpy arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adict</strong> (<em>dict</em>) – A dictionary that contains the patient details.</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – a list of patient notes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>doseGrids</strong> (<em>list</em>) – The list of 3D numpy arrays representing each dose grid</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – a list of the patient’s notes with updates on loading the dose grids.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.load_nifti_mask_2_numpyarray">
+<code class="sig-name descname">load_nifti_mask_2_numpyarray</code><span class="sig-paren">(</span><em class="sig-param">pid</em>, <em class="sig-param">nifti_mask_path</em>, <em class="sig-param">notes</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.load_nifti_mask_2_numpyarray" title="Permalink to this definition"></a></dt>
+<dd><p>A function used to load a patient mask into a 3D numpy array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pid</strong> (<em>int</em>) – patient id</p></li>
+<li><p><strong>nifti_mask_path</strong> (<em>str</em>) – path to the nifti mask</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – a list of patient notes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>thect</strong> (<em>3D numpy array</em>) – The collected 3D array mask</p></li>
+<li><p><strong>sn</strong> (<em>str</em>) – name of the mask</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – a list of the patient’s notes with updates on reading the mask from the nifti file.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.load_nifti_masks">
+<code class="sig-name descname">load_nifti_masks</code><span class="sig-paren">(</span><em class="sig-param">adict</em>, <em class="sig-param">notes</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.load_nifti_masks" title="Permalink to this definition"></a></dt>
+<dd><p>A function used to load the patient nifti masks to a list of 3D numpy arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adict</strong> (<em>dict</em>) – A dictionary that contains the patient details.</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – a list of patient notes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>list_of_masks</strong> (<em>list</em>) – The list of 3D numpy arrays</p></li>
+<li><p><strong>name_of_masks</strong> (<em>list</em>) – The list of the OARs and TV</p></li>
+<li><p><strong>roi_masks</strong> (<em>dict</em>) – A dict with keys as (mask0,mask1,mask2) represnting each roi in name_of_masks. i.e. roiname at position 0 in the list name_of_masks is mask0 and so on.</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – a list of the patient’s notes with updates on loading the nifti masks.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.load_roi_names_from_rtstuct">
+<code class="sig-name descname">load_roi_names_from_rtstuct</code><span class="sig-paren">(</span><em class="sig-param">rtstruct_path</em>, <em class="sig-param">notes</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.load_roi_names_from_rtstuct" title="Permalink to this definition"></a></dt>
+<dd><p>A function that can be used to extract ROI names from the patient rtstruct file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rtstruct_path</strong> (<em>str</em>) – Path to the RTSTRUCT file in the patient directory.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>notes: list</dt><dd><p>a list of patient notes</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>notes</strong> – a list of the patient’s notes with updates about the RTSTRUCT ROIs.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.load_url">
+<code class="sig-name descname">load_url</code><span class="sig-paren">(</span><em class="sig-param">url</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.load_url" title="Permalink to this definition"></a></dt>
+<dd><p>A function that uses the requests module to target the orthanc server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – a url to a file location (usually an instance file)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>content</strong> (<em>request content</em>) – an attribute with the patient content (with instances it should be a bytes array).</p></li>
+<li><p><strong>status_code</strong> (<em>int</em>) – the response code (i.e 200, 401, etc.)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.loadpatientnotes">
+<code class="sig-name descname">loadpatientnotes</code><span class="sig-paren">(</span><em class="sig-param">pid</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.loadpatientnotes" title="Permalink to this definition"></a></dt>
+<dd><p>A function that loads the patient notes based on the patient’s identifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pid</strong> (<em>int/str</em>) – Patient identifier</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – Patient dictionaty with various types of notes. i.e. collection, retrieval, verification, etc.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.prepare_patient_directory">
+<code class="sig-name descname">prepare_patient_directory</code><span class="sig-paren">(</span><em class="sig-param">adict</em>, <em class="sig-param">remove_old=True</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.prepare_patient_directory" title="Permalink to this definition"></a></dt>
+<dd><p>A function that prepares the patient directories. i.e. CT directory, RTSTRUCTs directory, etc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adict</strong> (<em>dictionary</em>) – a patient dictionary to add the paths to</p></li>
+<li><p><strong>remove_old</strong> (<em>boolean</em>) – an attribute used to specify if the old directory should be removed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>adict</strong> – patient dictionary with the updates paths to the directories, where data collected from the orthan server will be saved.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.purge">
+<code class="sig-name descname">purge</code><span class="sig-paren">(</span><em class="sig-param">adir</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.purge" title="Permalink to this definition"></a></dt>
+<dd><p>A function that removes any file with a keyword in the variable pattern from a directory.
+It is used with patients where file/directory should be removed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adir</strong> (<em>str</em>) – a directory</p></li>
+<li><p><strong>pattern</strong> (<em>str</em>) – a str value, where all filenames that contain this keyword will be removed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.recommendation">
+<code class="sig-name descname">recommendation</code><span class="sig-paren">(</span><em class="sig-param">patientnotes</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.recommendation" title="Permalink to this definition"></a></dt>
+<dd><p>A function that recommends the patient inclusion in the study based on a list of patient notes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>patientnotes</strong> (<em>list</em>) – list of patient’s notes</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>str</em> – recommendation (SUCCESS, REVIEW, or EXECLUDE)</p></li>
+<li><p><strong>codes</strong> (<em>list</em>) – list of patient codes collected from the list of notes.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.remove_phantom_studies">
+<code class="sig-name descname">remove_phantom_studies</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">patient_notes</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.remove_phantom_studies" title="Permalink to this definition"></a></dt>
+<dd><p>A function that identifies phantom studies and removes them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pandas dataframe</em>) – patient files summary dataframe</p></li>
+<li><p><strong>patient_notes</strong> (<em>list</em>) – list with the patients notes in the initial verification task.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>df</strong> (<em>pandas dataframe</em>) – a dataframe with no phantom studise</p></li>
+<li><p><strong>patient_notes</strong> (<em>list</em>) – list with the patients notes in the initial verification task.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.remove_unused_rtstructs">
+<code class="sig-name descname">remove_unused_rtstructs</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">notes</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.remove_unused_rtstructs" title="Permalink to this definition"></a></dt>
+<dd><p>A function that removes rtstructs with no target volumes related to any of the possible studies.
+i.e. any rtstruct without any keyword such as ptv, ctv, heart, or lung will be removed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pandas dataframe</em>) – patient image files summary dataframe</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – patient verfication notes list</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>df</strong> (<em>pandas dataframe</em>) – patient image files summary dataframe with removed ununsed rtstructs, if any</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – patient verfication notes list with updated notes, if any</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.savepatientnotes">
+<code class="sig-name descname">savepatientnotes</code><span class="sig-paren">(</span><em class="sig-param">pid</em>, <em class="sig-param">thekey</em>, <em class="sig-param">patientnotes</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.savepatientnotes" title="Permalink to this definition"></a></dt>
+<dd><p>A function that adds a list of patient notes with a key to the patient notes JSON file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pid</strong> (<em>int/str</em>) – Patient identifier</p></li>
+<li><p><strong>thekey</strong> (<em>str</em>) – The type of the notes to be saved</p></li>
+<li><p><strong>patientnotes</strong> (<em>list</em>) – A list of strs to save the the patient’s notes file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.search_for_code">
+<code class="sig-name descname">search_for_code</code><span class="sig-paren">(</span><em class="sig-param">notes</em>, <em class="sig-param">code</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.search_for_code" title="Permalink to this definition"></a></dt>
+<dd><p>A function that searches for a code in a list of notes associated with a patient</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>notes</strong> (<em>list</em>) – list of patient’s notes</p></li>
+<li><p><strong>code</strong> (<em>str</em>) – a code to search for in a list of strs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the code is in the list of strs, otherwise False.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.select_and_combine_dosegrids">
+<code class="sig-name descname">select_and_combine_dosegrids</code><span class="sig-paren">(</span><em class="sig-param">doseGrids</em>, <em class="sig-param">notes</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.select_and_combine_dosegrids" title="Permalink to this definition"></a></dt>
+<dd><p>A function used to select the dose grids. This function is used to handle the logic for combining dose grids.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>doseGrids</strong> (<em>list</em>) – The list of 3D numpy arrays representing each dose grid</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – a list of patient notes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>doseGrid</strong> (<em>3D numpy array</em>) – The final 3D dose grid</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – a list of the patient’s notes with updates on loading the dose grids.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.verify_initial">
+<code class="sig-name descname">verify_initial</code><span class="sig-paren">(</span><em class="sig-param">PatId</em>, <em class="sig-param">notes</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.verify_initial" title="Permalink to this definition"></a></dt>
+<dd><p>A function that checks the dataframe that summarizes patient imaging files (resulted from generate_imaging_dataframe_threading()).
+It reports details about modalities listed in required_modalities in the codes function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>PatId</strong> (<em>int/str</em>) – an int/str that represents the patient identifier</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – a list that contains the notes assoicated with the verification, and is used to append new notes while verifying the patient files.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>df</strong> (<em>Pandas dataframe</em>) – A pandas dataframe with the verified imaging records, i.e the required modalities</p></li>
+<li><p><strong>notes</strong> (<em>list</em>) – list of notes appended while verifying the patient’s imaging files.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PDCP.patientImaging.verify_study">
+<code class="sig-name descname">verify_study</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">notes</em>, <em class="sig-param">modality='CT'</em><span class="sig-paren">)</span><a class="headerlink" href="#PDCP.patientImaging.verify_study" title="Permalink to this definition"></a></dt>
+<dd><p>Within this function, the links between different modalities are identified to find connections.</p>
+<p>In each of the child classes, the logic that connects the required modalities is implemented.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="PDCP.ReadPatientImagingData.html" class="btn btn-neutral float-left" title="ReadPatientImagingData" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PDCP.patientImagingCR.html" class="btn btn-neutral float-right" title="patientImagingCR" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Ali Haidar.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
