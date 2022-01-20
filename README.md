@@ -95,6 +95,12 @@ Data Collection Example (Public Data)
 
 https://zenodo.org/record/5847536
 
+Documentation
+================
+
+https://australiancancerdatanetwork.github.io/PDCP/html/index.html
+
+
 Next Steps
 ==========
 
@@ -758,10 +764,7 @@ _Table 11 Loading the RTDOSES to numpy arrays._
 | XXIV\_EXEC\_003:EXECLUDE | Maximum dose received by a voxel is not acceptable. |
 | XXIV\_SUCC\_001:PROCEED | RTDOSES successfully loaded |
     
-Documentation
-================
 
-Documentation of the source code implemented within this repo can be found in docs/build/
 
 Contact
 ============================
