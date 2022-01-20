@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to PDCP’s documentation! &mdash; PDCP 0.0.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="DVH" href="api/PDCP.DVH.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="#" class="icon icon-home"> PDCP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Welcome to PDCP’s documentation!</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#overview-version-0-0-1">Overview (version 0.0.1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#what-can-pdcp-do">What can PDCP do?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#next-steps">Next Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#selecting-modalities-in-a-patient-study">Selecting Modalities in a Patient Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#selecting-a-patient-study">Selecting a Patient Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#example-data-collection">Example Data Collection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-setup-configuration-file">Step 1: Setup Configuration File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-prepare-directories">Step 2: Prepare directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-retrieve-orthanc-ids">Step 3: Retrieve Orthanc Ids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-4-prepare-patients-images-summaries">Step 4: Prepare Patients Images Summaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-5-generate-patient-data">Step 5: Generate Patient Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-6-check-patients">Step 6: Check Patients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-7-generate-dosimetry-features">Step 7: Generate Dosimetry Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-8-patients-in-quarantine">Step 8: Patients in Quarantine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#pdcp">PDCP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/PDCP.DVH.html">DVH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/PDCP.ROIP.html">ROIP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/PDCP.ReadPatientImagingData.html">ReadPatientImagingData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/PDCP.patientImaging.html">patientImaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/PDCP.patientImagingCR.html">patientImagingCR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/PDCP.patientImagingCRD.html">patientImagingCRD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/PDCP.patientImagingCRDP.html">patientImagingCRDP</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/PDCP.DVH.html">DVH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/PDCP.ROIP.html">ROIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/PDCP.ReadPatientImagingData.html">ReadPatientImagingData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/PDCP.patientImaging.html">patientImaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/PDCP.patientImagingCR.html">patientImagingCR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/PDCP.patientImagingCRD.html">patientImagingCRD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/PDCP.patientImagingCRDP.html">patientImagingCRDP</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">PDCP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li>Welcome to PDCP’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="welcome-to-pdcp-s-documentation">
+<h1>Welcome to PDCP’s documentation!<a class="headerlink" href="#welcome-to-pdcp-s-documentation" title="Permalink to this headline"></a></h1>
+<div class="toctree-wrapper compound">
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Welcome to PDCP’s documentation!</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#overview-version-0-0-1">Overview (version 0.0.1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#what-can-pdcp-do">What can PDCP do?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#next-steps">Next Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#selecting-modalities-in-a-patient-study">Selecting Modalities in a Patient Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#selecting-a-patient-study">Selecting a Patient Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#example-data-collection">Example Data Collection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-setup-configuration-file">Step 1: Setup Configuration File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-prepare-directories">Step 2: Prepare directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-retrieve-orthanc-ids">Step 3: Retrieve Orthanc Ids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-4-prepare-patients-images-summaries">Step 4: Prepare Patients Images Summaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-5-generate-patient-data">Step 5: Generate Patient Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-6-check-patients">Step 6: Check Patients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-7-generate-dosimetry-features">Step 7: Generate Dosimetry Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-8-patients-in-quarantine">Step 8: Patients in Quarantine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#pdcp">PDCP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/PDCP.DVH.html">DVH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/PDCP.ROIP.html">ROIP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/PDCP.ReadPatientImagingData.html">ReadPatientImagingData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/PDCP.patientImaging.html">patientImaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/PDCP.patientImagingCR.html">patientImagingCR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/PDCP.patientImagingCRD.html">patientImagingCRD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/PDCP.patientImagingCRDP.html">patientImagingCRDP</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="overview-version-0-0-1">
+<h1>Overview (version 0.0.1)<a class="headerlink" href="#overview-version-0-0-1" title="Permalink to this headline"></a></h1>
+<p>PDCP is a tool used to collect and process patients imaging data from the Orthanc research PACs in an Auscat data centre.</p>
+<p>Orthanc provides a simple and standalone DICOM server (PACS). It supports the DICOM and DICOMweb protocols.
+It is currently used in the AUScat network to save patients anonymized radiotherapy imaging data exported from the Hospital PACS.</p>
+<p>PDCP is a python module that consists of multiple classes used to
+prepare patients records. Object oriented programming and inheritance
+were followed to make the code reusable and to extend certain functions.
+The <strong>patientImaging</strong> class is the main module and it contains a set of functions used
+to collect, validate, and track the data preparation process.</p>
+<p>Other classes that inherit from <strong>patientImaging</strong> were created to handle different cancer sites and projects:</p>
+<ul class="simple">
+<li><p><strong>patientImagingCRDP</strong>: a class that inherits the patientImaging class, used to collect and process cancer patients data from the AUScat data centers, where there is a need to link 4 patient modalities. (C: stands for CT, R: stands for RTSTRUCTS, D: stands for RTDOSE, P: stands for the RTPLAN)</p></li>
+<li><p><strong>patientImagingCRD</strong>: a class that inherits the patientImaging class, used to collect and process cancer patients radiotherapy data where the RTPLAN cannot be obtained</p></li>
+<li><p><strong>patientImagingCR</strong>: a class that inherits the patientImaging class, used to collect and process a patients data where there is a need to link the CT with the RTSTRUCT only (segmentation task).</p></li>
+</ul>
+<p>Other classes/functions were implemented to facilitate the data preparation task:</p>
+<ul class="simple">
+<li><p><strong>ReadPatientImagingData</strong>: used to load the patient’s processed data into a python dictionary {‘CT’:,’masks’:,etc}.</p></li>
+<li><p><strong>ROIP</strong> : a class used to generate the central slices patient’s organs at risk (OARs) and target volumes (TV)</p></li>
+<li><p><strong>DVH</strong> : a class used to generate the dosimetry features for the patients.</p></li>
+</ul>
+<p>Several python packages were utilized to collect the data and to process the images:</p>
+<ul class="simple">
+<li><p><strong>requests</strong>: a python built-in module used to retrieve required files from an orthanc server (targets the orthanc server rest API)</p></li>
+<li><p><strong>pyorthanc</strong>: a python library that wraps the Orthanc REST API and facilitates the manipulation of data with several utilities. It was used in this script to identify patient related files. It was initially used to retrieve data through some fuctions (get_instance_file(), get_instance_simplified_tags()), however it was noticed that it was slow compared to python built-in modules.</p></li>
+<li><p><strong>concurrent.futures</strong> : a python built-in module used to apply threading and multiprocessing.</p></li>
+<li><p><strong>pydicom</strong>: a python library used to handle dicom imaging tasks. i.e the orthanc server returns the files as a bytes array. pydicom functions were used to convert such arrays to pydicom FileDatasets before saving into the patient’s directory.</p></li>
+<li><p><strong>simpleITK</strong>: is a simplified, open-source interface to the Insight Segmentation and Registration Toolkit. It was used to handle resampling tasks for the dose grid.</p></li>
+<li><p><strong>numpy</strong>: used to save radiotherapy data into 3d arrays.</p></li>
+<li><p><strong>pandas</strong>: a python library used with tabular data, dataframes were used to save the images summaries in this script</p></li>
+<li><p><strong>json</strong>: used to save patient notes while collecting and processing the records</p></li>
+<li><p><strong>hdf5stogare</strong>: used to save and load matlab files that contains the patient’s related data (not used).</p></li>
+</ul>
+</div>
+<div class="section" id="what-can-pdcp-do">
+<h1>What can PDCP do?<a class="headerlink" href="#what-can-pdcp-do" title="Permalink to this headline"></a></h1>
+<p>PDCP facilitates the data collection and preparation for using imaging radiotherapy data. PDCP can:</p>
+<ul class="simple">
+<li><p>Query, retrieve, and validate patient imaging summaries from an Orthanc PACS.</p></li>
+<li><p>Analyse associations in patient studies (linking required modalities)</p></li>
+<li><p>Retrieve patient imaging data into a local directory.</p></li>
+<li><p>Prepare the records for use in various research questions (dosimetry analyses, contouring, image standardization)</p></li>
+<li><p>Track the patients data collection process and idenfity reasons behind excluding patients data.</p></li>
+</ul>
+</div>
+<div class="section" id="next-steps">
+<h1>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>Patients data are currently retrieved via the http protocol. We aim to utilize the WebDav, which is an extended protocol that allows remote web content authoring operations, in future versions to be able to use dicom tags and indexed images from Orthanc directly. Within WebDav, data can be viewed by patients, studies, or uids, which will help in managing DICOM data at the centres.</p></li>
+<li><p>We aim to utilize the Orthanc plugins such as <strong>serve-folders</strong> to be able to track patient notes from webpages.</p></li>
+<li><p>At this stage, patients with multiple studies will require manual review for selecting the right study. We aim to automate this process.</p></li>
+</ul>
+</div>
+<div class="section" id="selecting-modalities-in-a-patient-study">
+<h1>Selecting Modalities in a Patient Study<a class="headerlink" href="#selecting-modalities-in-a-patient-study" title="Permalink to this headline"></a></h1>
+<p>The current linkage is conducted without retrieving patients data from the Orthanc server. Before retrieving data, the patients will be verified.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>For each CT inside the study:</dt><dd><ul>
+<li><dl class="simple">
+<dt>Start the RTSTRUCT linkage:</dt><dd><ul>
+<li><p>Select the ‘SOPInstanceUID’,’SeriesIdentifier’ of RTSTRUCTS in the study that has the referenced ct series uid  as the selected CT.</p></li>
+<li><dl class="simple">
+<dt>If no RTSTRUCT associated with the CT:</dt><dd><ul>
+<li><p>Continue to the next CT</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Start the RTPLAN linkage:</dt><dd><ul>
+<li><p>Select the ‘SOPInstanceUID’,’ReferencedStructureSetSequence’ of RTPLANS in the study</p></li>
+<li><p>Remove the RTPLANS that has no ReferencedStructureSetSequence</p></li>
+<li><p>Get the SOPInstanceUID of each of the remaining RTPLANS</p></li>
+<li><dl class="simple">
+<dt>If no remaining SOPInstanceUID:</dt><dd><ul>
+<li><p>Cannot proceed further with the CT as there is no association, discard this CT and proceed to the next CT</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Get the SOPs of the rtstructs referenced in the RTPLANS</p></li>
+<li><p>Select the RTPLANS linked to the RTSTRUCT selected earlier</p></li>
+<li><dl class="simple">
+<dt>If no remaining RTPLAN SOPInstanceUID:</dt><dd><ul>
+<li><p>Cannot proceed further with the CT as there is no association to the RTSTRUCT that links to the CT, proceed to the next CT, continue</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Start the RTDOSE linkage:</dt><dd><ul>
+<li><p>Select the ‘SOPInstanceUID’,’ReferencedRTPlanSequence’ of the instances that has DoseSummationType as PLAN</p></li>
+<li><dl class="simple">
+<dt>If no SOPInstanceUIDs:</dt><dd><ul>
+<li><p>Cannot proceed further with the CT as there will be no RTDOSEs, continue</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Get the SOPInstanceUIDs of the doses that has ReferencedRTPlanSequence selected.</p></li>
+<li><dl class="simple">
+<dt>If no SOPInstanceUIDs:</dt><dd><ul>
+<li><p>Cannot proceed further with the CT, as there will be no RTDOSE linked to the RTPLAN linked to the RTSTRUCT linked to the CT. discard this CT and proceed to the next CT</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Association is now successful. Orthanc ids are required</p></li>
+<li><p>Get the CT orthanc identifier</p></li>
+<li><p>Get the RTSTRUCTS Orthanc identifier/s</p></li>
+<li><p>Get the RTPLANS Orthanc identifier/s</p></li>
+<li><p>Get the RTDOSE Orthanc identifier/s</p></li>
+<li><p>Append the values as a dictionary to a list</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>After linking the series inside the study.</dt><dd><ul>
+<li><dl class="simple">
+<dt>If the list is empty:</dt><dd><ul>
+<li><p>no links between series CTs, discard the study</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>If the list has one value:</dt><dd><ul>
+<li><p>best scenario</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>If the list contains multiple dictionaries with links:</dt><dd><ul>
+<li><p>The patient has multiple association. i.e. there are two CTs that has approved links. Cannot take a decision for now.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="selecting-a-patient-study">
+<h1>Selecting a Patient Study<a class="headerlink" href="#selecting-a-patient-study" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>A study is selected if it contains the required modalities added by the user.</p></li>
+<li><p>A study will be discarded if the selected CT series contains a large number of instances</p></li>
+<li><p>A study will be discarded if the study has the required RTSTRUCT, with the RTSTRUCT not containing any of the required keywords (i.e. study with RTSTRUCT with contour names PATIENT, ISO) will not be used.</p></li>
+<li><p>A study will be discarded if it contains multiple CTs with multiple associations, will be discarded and will require review.</p></li>
+<li><p>A study will be discarded if it contains a keyword that should not be found in its study name (e.g. a breast cohort is being collecting while the study name shows ‘head and neck’).</p></li>
+</ul>
+</div>
+<div class="section" id="example-data-collection">
+<h1>Example Data Collection<a class="headerlink" href="#example-data-collection" title="Permalink to this headline"></a></h1>
+<p>The example below shows the steps followed to prepare a cohort of 10 patients.</p>
+<p>This example has been conducted with <strong>patientImagingCRDP</strong> for a breast cohort, where a linkage between CT–&gt; RTSTRUCT –&gt; RTPLAN –&gt; RTDOSE is targeted.</p>
+<div class="section" id="step-1-setup-configuration-file">
+<h2>Step 1: Setup Configuration File<a class="headerlink" href="#step-1-setup-configuration-file" title="Permalink to this headline"></a></h2>
+<p>For each data collection and preparation task, a configuration file is required. The first step is to create the configuration in a json file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;Westmead breast 0.0.1&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;required_modalities_for_patient&quot;</span><span class="p">:[</span>
+    <span class="s2">&quot;CT&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RTSTRUCT&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RTDOSE&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RTPLAN&quot;</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;required_modalities_for_patient_plus_rtplan&quot;</span><span class="p">:[</span>
+    <span class="s2">&quot;CT&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RTSTRUCT&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RTDOSE&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RTPLAN&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PT&quot;</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;study_desc_should_not_contain&quot;</span><span class="p">:[</span>
+    <span class="s2">&quot;lung&quot;</span><span class="p">,</span><span class="s2">&quot;head&quot;</span><span class="p">,</span><span class="s2">&quot;prostate&quot;</span><span class="p">,</span><span class="s2">&quot;rectum&quot;</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;study_desc_may_contain&quot;</span><span class="p">:[</span><span class="s2">&quot;breast&quot;</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;possibilities&quot;</span><span class="p">:[</span>
+    <span class="s2">&quot;ctv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gtv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;itv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ptv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;heart&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;lung&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tumour&quot;</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;imagesummaries&quot;</span><span class="p">:</span> <span class="s2">&quot;../../pdcptest/imagesummaries/&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;patientnotesdir&quot;</span><span class="p">:</span> <span class="s2">&quot;../../pdcptest/patientnotes/&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;matlabfiles&quot;</span><span class="p">:</span> <span class="s2">&quot;../../pdcptest/matlabfiles/&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;picklefiles&quot;</span><span class="p">:</span> <span class="s2">&quot;../../pdcptest/picklefiles/&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;datadirectory&quot;</span><span class="p">:</span> <span class="s2">&quot;../../pdcptest/data/&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;thequarantine&quot;</span><span class="p">:</span><span class="s2">&quot;../../pdcptest/quarantine/&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;link_to_ids&quot;</span><span class="p">:</span> <span class="s2">&quot;../../pdcptest/ids/breast_ids_test.csv&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;ipport&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:8042&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;CONNECTIONS&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+  <span class="s2">&quot;TIMEOUT&quot;</span><span class="p">:</span> <span class="mi">100</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here is a brief overview of the required keys:</p>
+<ul class="simple">
+<li><p><strong>required_modalities_for_patient</strong>: a list of the required modalities [‘CT’,’RTSTRUCT’,’RTPLAN’,’RTDOSE’]</p></li>
+<li><p><strong>study_desc_should_not_contain</strong>:  a list of keywords the patient study should not contain.</p></li>
+<li><p><strong>study_desc_may_contain</strong>: a list of keywords a patient study might contain</p></li>
+<li><p><strong>possibilities</strong>: a list of keywords, where one of them at least should be found in the RTSTRUCT contours</p></li>
+<li><p><strong>imagesummaries</strong>: a directory to host the patient instances dicom summaries tags found in the targeted Orthanc server.</p></li>
+<li><p><strong>patientnotesdir</strong>: a directory to host the patient notes</p></li>
+<li><p><strong>datadictionary</strong>: a directory to host the patients records.</p></li>
+<li><p><strong>quarantine</strong>: Patients might have a rescan through the course of treatment. Other patients might have multiple courses of treatment. Quarantine is used to host patients with multiple studies.</p></li>
+<li><p><strong>link_to_ids</strong>: a csv file that contains the patient ids and its corresponding indexed orthanc ids.</p></li>
+<li><p><strong>ipport</strong>: ip and port of the Orthanc server.</p></li>
+<li><p><strong>username</strong>: username of an account in the Orthanc server</p></li>
+<li><p><strong>password</strong>: password of an account in the Orthanc server. Leave empty if not needed.</p></li>
+<li><p><strong>CONNECTIONS</strong>: the number of connections to be used when targeting the server.</p></li>
+<li><p><strong>TIMEOUT</strong>: total number of seconds to wait when sending the request to the server.</p></li>
+</ul>
+</div>
+<div class="section" id="step-2-prepare-directories">
+<h2>Step 2: Prepare directories<a class="headerlink" href="#step-2-prepare-directories" title="Permalink to this headline"></a></h2>
+<p>Create a directory to host the patients data and notes. This directory should include:</p>
+<ul class="simple">
+<li><p><strong>ids</strong> : a directory used to save a .csv file that will contain the patient ids and its corresponding Orthanc ids (<em>links_to_ids</em> in the config file).</p></li>
+<li><p><strong>imagesummaries</strong>: a directory used to save csv files that contain summaries of patient’s imaging data in the targeted orthanc server</p></li>
+<li><p><strong>patientnotes</strong>: a directory that will be used to save json objects that contain each patient data collection and preparation notes</p></li>
+<li><p><strong>data</strong>: will be used to save patient data. For each patient, a new directory will be created.</p></li>
+<li><p><strong>quarantine</strong>: will be used to save patient quarantine data. Each study will be treated as the only study associated with the patient. Hence, once a study is selected it will be manually moved into the data directory.</p></li>
+</ul>
+</div>
+<div class="section" id="step-3-retrieve-orthanc-ids">
+<h2>Step 3: Retrieve Orthanc Ids<a class="headerlink" href="#step-3-retrieve-orthanc-ids" title="Permalink to this headline"></a></h2>
+<p>The third step is to retrieve patients assoicated ids from the Orthanc server. The Orthanc server will create a specific id for each patient. These values are
+currently saved in an SQLite database (by default) with options to utilize other servers as plugins  (Postgress).</p>
+<p>After running this script, each row in the generated .csv file will represent the
+patient identifier and its corresponding Orthanc identifier, which is used by the Orthanc server to index patient’s studies.</p>
+<p>The script is currently used to get all the patients ids from the remote server.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PDCP</span> <span class="kn">import</span> <span class="n">patientImaging</span>
+<span class="n">codesconfig</span><span class="o">=</span><span class="s1">&#39;codesconfig_test.json&#39;</span>
+<span class="n">patientImaging</span><span class="o">.</span><span class="n">collect_pids_orthanc</span><span class="p">(</span><span class="n">codesconfig</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The csv file will be similar to :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ids</span><span class="p">,</span><span class="n">orthanc_ids</span>
+<span class="mi">1</span><span class="p">,</span><span class="n">b589720b</span><span class="o">-</span><span class="n">b3e2d6bb</span><span class="o">-</span><span class="n">e8ad034c</span><span class="o">-</span><span class="n">f3443ebd</span><span class="o">-</span><span class="mi">5</span><span class="n">d155c67</span>
+<span class="mi">2</span><span class="p">,</span><span class="mi">236</span><span class="n">b7e77</span><span class="o">-</span><span class="mi">7</span><span class="n">dd097d0</span><span class="o">-</span><span class="mf">8e78</span><span class="n">dcac</span><span class="o">-</span><span class="mi">98</span><span class="n">aca88b</span><span class="o">-</span><span class="mi">1</span><span class="n">d214fd1</span>
+<span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="n">ab22a5c</span><span class="o">-</span><span class="mi">1</span><span class="n">c79ed07</span><span class="o">-</span><span class="mi">229</span><span class="n">b7721</span><span class="o">-</span><span class="mi">3</span><span class="n">d92e770</span><span class="o">-</span><span class="n">c7fcdf0e</span>
+<span class="mi">4</span><span class="p">,</span><span class="mi">74686685</span><span class="o">-</span><span class="n">bb06152e</span><span class="o">-</span><span class="mi">9525</span><span class="n">ef4c</span><span class="o">-</span><span class="n">f5f53674</span><span class="o">-</span><span class="n">fc880224</span>
+<span class="mi">5</span><span class="p">,</span><span class="n">c8e45dnf</span><span class="o">-</span><span class="n">bf3b1367</span><span class="o">-</span><span class="mi">85</span><span class="n">aa9baa</span><span class="o">-</span><span class="mi">1017</span><span class="n">d2a0</span><span class="o">-</span><span class="mi">1789</span><span class="n">c6d4</span>
+</pre></div>
+</div>
+<p>with ids representing the patient ids and orthac_ids representing the patient orthanc id.</p>
+</div>
+<div class="section" id="step-4-prepare-patients-images-summaries">
+<h2>Step 4: Prepare Patients Images Summaries<a class="headerlink" href="#step-4-prepare-patients-images-summaries" title="Permalink to this headline"></a></h2>
+<p>The fourth step is to collect a summary of the available data for each patient in the Orthanc server.
+Various dicom tags are required to handle the linkage between modalities and to prepare the patient sudy.
+These tags are retrieved for each patient instance and added as a row to the associated csv file.
+For each patient, a dataframe is expected to be generated. Three possible cases are axpected when collecting patients images summaries:</p>
+<ol class="arabic simple">
+<li><p><strong>pid_SUCCESS.csv</strong> : This indicates that the patient images summary (dataframe) was successfully prepared .</p></li>
+<li><p><strong>pid_IMAGINGDATANOTFOUND.csv</strong> : This indicates that the patient images summary (dataframe) cannot be generated because patients data related to data collection task were not found.</p></li>
+<li><p><strong>pid_ERROR.csv</strong> : This indicates that the patient images summary was collected with errors. In most cases, this error occurs because the server failed to handle a high number of requests at the same time. This can be fixed by repeating the execution or by lowering the number of threads to target the server.</p></li>
+</ol>
+<p>To collect patient images summaries:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span><span class="nn">math</span><span class="o">,</span><span class="nn">time</span><span class="o">,</span><span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../..&#39;</span><span class="p">))</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../PDCP/code/&#39;</span><span class="p">))</span>
+
+<span class="kn">from</span> <span class="nn">PDCP</span> <span class="kn">import</span> <span class="n">patientImagingCRDP</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ProcessPoolExecutor</span>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Collecting patient summaries from the orthanc server.&#39;</span><span class="p">)</span>
+        <span class="n">start</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">codesconfig</span><span class="o">=</span><span class="s2">&quot;codesconfig_test.json&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">codesconfig</span><span class="p">):</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Congfig file does not exist.&#39;</span><span class="p">)</span>
+            <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Press ENTER to exit&#39;</span><span class="p">)</span>
+        <span class="n">br</span><span class="o">=</span><span class="n">patientImagingCRDP</span><span class="p">(</span><span class="n">codesconfig</span><span class="p">)</span>
+        <span class="n">link_to_ids</span><span class="o">=</span><span class="n">br</span><span class="o">.</span><span class="n">codes</span><span class="p">[</span><span class="s1">&#39;link_to_ids&#39;</span><span class="p">]</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">link_to_ids</span><span class="p">)</span>
+        <span class="n">orthanc_ids</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;orthanc_ids&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="n">patients_ids</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;ids&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+        <span class="c1">#cpus=multiprocessing.cpu_count()</span>
+        <span class="n">cpus</span><span class="o">=</span><span class="mi">2</span>
+        <span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">orthanc_ids</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">cpus</span><span class="p">)))</span><span class="c1">#leave one CPU for other things :p</span>
+        <span class="c1">#n=2 #I assume we have 2 processes available in the server.</span>
+        <span class="n">oids</span> <span class="o">=</span> <span class="p">[</span><span class="n">orthanc_ids</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">n</span><span class="p">:(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">orthanc_ids</span><span class="p">)</span> <span class="o">+</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">n</span> <span class="p">)]</span>
+        <span class="n">pids</span><span class="o">=</span><span class="p">[</span><span class="n">patients_ids</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">n</span><span class="p">:(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">patients_ids</span><span class="p">)</span> <span class="o">+</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">n</span> <span class="p">)]</span>
+        <span class="n">processes</span><span class="o">=</span><span class="p">[]</span>
+        <span class="k">with</span> <span class="n">ProcessPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span> <span class="o">=</span> <span class="n">cpus</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+          <span class="n">results</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">generate_orthanc_files_summaries</span><span class="p">,</span> <span class="n">oids</span><span class="p">,</span><span class="n">pids</span><span class="p">)</span>
+        <span class="n">wpids</span><span class="o">=</span><span class="p">[]</span>
+        <span class="n">wpatient_comments</span><span class="o">=</span><span class="p">[]</span>
+        <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span><span class="c1">#results is an iterable of tuples</span>
+            <span class="n">wpids</span><span class="o">=</span><span class="n">wpids</span><span class="o">+</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">wpatient_comments</span><span class="o">=</span><span class="n">wpatient_comments</span><span class="o">+</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">wpatient_comments</span><span class="p">)</span>
+        <span class="n">finish</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;time taken to get patient imaging data: {finish-start}&quot;</span><span class="p">)</span>
+        <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Press ENTER to exit&#39;</span><span class="p">)</span>
+        <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Press ENTER to exit&#39;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;An error occured.&quot;</span><span class="p">)</span>
+        <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Press ENTER to exit&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When running this script, the image summaries will be added to <strong>imagesummaries</strong>. Here is a result of running a cohort of 10 patients with patientImagingCRDP</p>
+<a class="reference internal image-reference" href="_images/patientimagingsummary.png"><img alt="Alternative text" class="align-center" src="_images/patientimagingsummary.png" style="width: 400px; height: 400px;" /></a>
+</div>
+<div class="section" id="step-5-generate-patient-data">
+<h2>Step 5: Generate Patient Data<a class="headerlink" href="#step-5-generate-patient-data" title="Permalink to this headline"></a></h2>
+<p>The images summary for each patient has been collected. The next step is to verify linkage and retrieve patients data.</p>
+<p>The fifth step includes retrieving data from the orthanc server into a local directory that consists of:</p>
+<ul class="simple">
+<li><p><strong>CT:</strong> a directory that contains the patient’s CT DICOM slices</p></li>
+<li><p><strong>RTDOSE:</strong> a direcotry that contains the patient’s RTDOSES</p></li>
+<li><p><strong>RTSTRUCT:</strong> a direcotry of directories that contains the patient’s RTSTRUCT. (each RTSTRUCT will be saved in a sub directory)</p></li>
+<li><p><strong>CTnifti:</strong> a directory that contains the patient’s CT nifti file</p></li>
+<li><p><strong>masks:</strong> a directory of directories that contains the patient’s structures masks. To generate the masks, a script was taken from platipy (Thanks Platipy !).</p></li>
+<li><p><strong>rtdosenifti:</strong> a directory that contains the patient’s converted RTDOSES</p></li>
+</ul>
+<p><strong>Part A: Example with one patient</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span><span class="nn">os</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../PDCP/code/&#39;</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">PDCP</span> <span class="kn">import</span> <span class="n">patientImagingCRDP</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">start</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">patients_ids</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">codesconfig</span><span class="o">=</span><span class="s1">&#39;codesconfig_test.json&#39;</span>
+<span class="n">bcd</span><span class="o">=</span><span class="n">patientImagingCRDP</span><span class="p">(</span><span class="n">codesconfig</span><span class="p">)</span>
+<span class="n">patients_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">123456789</span><span class="p">]</span>
+<span class="n">patients_to_execlude</span><span class="p">,</span><span class="n">patients_to_review</span><span class="p">,</span><span class="n">patients_passed</span><span class="o">=</span><span class="n">bcd</span><span class="o">.</span><span class="n">generate_patients_data</span><span class="p">(</span><span class="n">patients_ids</span><span class="p">)</span>
+<span class="n">finish</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;time taken for one patient: {finish-start}&#39;</span><span class="p">)</span>
+
+
+<span class="n">notesdir</span><span class="o">=</span><span class="n">bcd</span><span class="o">.</span><span class="n">codes</span><span class="p">[</span><span class="s1">&#39;patientnotesdir&#39;</span><span class="p">]</span>
+<span class="n">filepath</span><span class="o">=</span><span class="n">notesdir</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">patients_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39;.json&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,)</span>
+<span class="nb">file</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The previous script shows the data collection process for one patient with an id <em>123456789</em>. Running this script, a directory with the patient records is expected.</p>
+<p><strong>Part B: Example with multiple patients using multiple CPUs</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span><span class="nn">os</span><span class="o">,</span><span class="nn">time</span><span class="o">,</span><span class="nn">math</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../PDCP/code/&#39;</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">PDCP</span> <span class="kn">import</span> <span class="n">patientImagingCRDP</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ProcessPoolExecutor</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">start</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">patients_ids</span><span class="o">=</span><span class="p">[]</span>
+    <span class="n">codesconfig</span><span class="o">=</span><span class="s1">&#39;codesconfig_test.json&#39;</span>
+    <span class="n">bcd</span><span class="o">=</span><span class="n">patientImagingCRDP</span><span class="p">(</span><span class="n">codesconfig</span><span class="p">)</span>
+    <span class="n">thedir</span><span class="o">=</span><span class="n">bcd</span><span class="o">.</span><span class="n">codes</span><span class="p">[</span><span class="s1">&#39;imagesummaries&#39;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">thedir</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s2">&quot;SUCCESS&quot;</span> <span class="ow">in</span> <span class="n">filename</span><span class="p">:</span>
+            <span class="n">pid</span><span class="o">=</span><span class="n">filename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">patients_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">pid</span><span class="p">))</span>
+
+    <span class="n">cpus</span><span class="o">=</span><span class="mi">2</span>
+    <span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">patients_ids</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">cpus</span><span class="p">)))</span>
+    <span class="n">pids</span><span class="o">=</span><span class="p">[</span><span class="n">patients_ids</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">n</span><span class="p">:(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">patients_ids</span><span class="p">)</span> <span class="o">+</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">n</span> <span class="p">)]</span>
+    <span class="k">with</span> <span class="n">ProcessPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span> <span class="o">=</span> <span class="n">cpus</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+      <span class="n">results</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">bcd</span><span class="o">.</span><span class="n">generate_patients_data</span><span class="p">,</span> <span class="n">pids</span><span class="p">)</span>
+    <span class="n">patients_to_execlude</span><span class="o">=</span><span class="p">[]</span>
+    <span class="n">patients_to_review</span><span class="o">=</span><span class="p">[]</span>
+    <span class="n">patients_passed</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+      <span class="n">patients_to_execlude</span><span class="o">=</span><span class="n">patients_to_execlude</span><span class="o">+</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">patients_to_review</span><span class="o">=</span><span class="n">patients_to_review</span><span class="o">+</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+      <span class="n">patients_passed</span><span class="o">=</span><span class="n">patients_passed</span><span class="o">+</span><span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">finish</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;time taken to get patient imaging data: {finish-start}&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;patients_to_execlude: {len(patients_to_execlude)}&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;patients_to_review: {len(patients_to_review)}&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;patients_passed: {len(patients_passed)}&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;patients_to_execlude&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">patients_to_execlude</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;patients_to_review&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">patients_to_review</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;patients_passed&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">patients_passed</span><span class="p">)</span>
+    <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Press ENTER to exit&#39;</span><span class="p">)</span>
+    <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Press ENTER to exit&#39;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+   <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>For each patient, a .json file will be generated to report the data collection process. An example below shows the notes that will be added to the <strong>patientnotes</strong> directory.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;raw_images_summary&quot;</span><span class="p">:{</span><span class="s2">&quot;PatId&quot;</span><span class="p">:</span> <span class="mi">123456789</span><span class="p">,</span>
+    <span class="s2">&quot;number_of_patient_studies&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;number_of_CT_series&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;number_of_CT_instances&quot;</span><span class="p">:</span> <span class="mi">131</span><span class="p">,</span>
+    <span class="s2">&quot;number_of_RTSTRUCT_series&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;number_of_RTSTRUCT_instances&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;number_of_RTDOSE_series&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;number_of_RTDOSE_instances&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;number_of_RTPLAN_series&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;number_of_RTPLAN_instances&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;number_of_PT_series&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;number_of_PT_instances&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+    <span class="s2">&quot;list_of_values&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;PatId&quot;</span><span class="p">:</span> <span class="mi">123456789</span><span class="p">,</span>
+        <span class="s2">&quot;CT_SeriesIdentifier&quot;</span><span class="p">:</span> <span class="s2">&quot;1.3.6.1.4.1.32722.1111111111&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;RTSTRUCT_SOPInstanceUID&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;1.3.6.1.4.1.32722.22222222&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;StructureSetDate&quot;</span><span class="p">:</span> <span class="s2">&quot;missing&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;StudyDate&quot;</span><span class="p">:</span> <span class="mi">20141222</span><span class="p">,</span>
+        <span class="s2">&quot;RTDOSE_SOPInstanceUID&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;1.3.6.1.4.1.32722.3333333&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;RTPLAN_SOPInstanceUID&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;1.3.6.1.4.1.32722.44444444444444&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;CT_orthanc_identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;97953882-c2ac9041-5c6a81b3-asdas21-12567e46&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;RTSTRUCT_orthanc_identifiers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;567b1457-9971653c-333222-0bbee186-a36cff64&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;RTDOSE_orthanc_identifiers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;7005f8e5-e75dfd2b-111-44-306b4626&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;RTPLAN_orthanc_identifiers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;e12583b3-555422-99ad91d5-31af02e4-fc62a157&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;thedir&quot;</span><span class="p">:</span> <span class="s2">&quot;../../pdcptest/data/123456789/&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ct_directory&quot;</span><span class="p">:</span> <span class="s2">&quot;../../pdcptest/data/123456789/CT/&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rtdoses_directory&quot;</span><span class="p">:</span> <span class="s2">&quot;../../pdcptest/data/123456789/RTDOSE/&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rtstruct_directory&quot;</span><span class="p">:</span> <span class="s2">&quot;../../pdcptest/data/123456789/RTSTRUCT/&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;masks_directory&quot;</span><span class="p">:</span> <span class="s2">&quot;../../pdcptest/data/123456789/masks/&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;nifti_directory&quot;</span><span class="p">:</span> <span class="s2">&quot;../../pdcptest/data/123456789/CTnifti/&quot;</span><span class="p">},</span>
+ <span class="s2">&quot;verification_notes&quot;</span><span class="p">:</span>
+     <span class="p">[</span><span class="s2">&quot;I: Initial Verification: no phantom was found for the patient.&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;I: Initial Verification: Patient has one associated study&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;I: I_SUCC_001:PROCEED:123456789&quot;</span><span class="p">,</span> <span class="s2">&quot;II: Study verification&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;II: Study verification: Checking CT series: 1.3.6.1.4.1.32722.1111111111&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;II: Study verification: Patient has one CT associated with RTSTRUCTS and RTDOSES&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;II: II_SUCC_001:PROCEED:123456789&quot;</span><span class="p">],</span>
+ <span class="s2">&quot;verified_images_summary&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;PatId&quot;</span><span class="p">:</span> <span class="mi">123456789</span><span class="p">,</span>
+     <span class="s2">&quot;number_of_patient_studies&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;number_of_CT_series&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="s2">&quot;number_of_CT_instances&quot;</span><span class="p">:</span> <span class="mi">131</span><span class="p">,</span> <span class="s2">&quot;number_of_RTSTRUCT_series&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="s2">&quot;number_of_RTSTRUCT_instances&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;number_of_RTDOSE_series&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="s2">&quot;number_of_RTDOSE_instances&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;number_of_RTPLAN_series&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="s2">&quot;number_of_RTPLAN_instances&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;number_of_PT_series&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;number_of_PT_instances&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+  <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;liverpool python v1.0.&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;retrieval_notes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;XI: CT retrieval:Took 5.89 s&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;XI: CT retrieval: skipped, no SliceLocation: 0&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;XI: CT retrieval: skipped, no ImagePositionPatient: 0&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;XI: CT retrieval: retrieved the CT series instances to the local directory.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;XI: XI_SUCC_001:PROCEED&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;XII: CTnifti generation&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;XII: CTnifti generation: Successfully added the CT nifti file to its directory&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;XII: XII_SUCC_001:PROCEED&quot;</span><span class="p">,</span> <span class="s2">&quot;XIII: RTSTRUCTS retrieval&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;XIII: RTSTRUCTS retrieval: added an RTSTRUCT instance to the RTSTRUCT directory.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;XIII: XIII_SUCC_001: PROCEED&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;XIV: RTSTRUCTS nifti masks generation.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;XIV: XIV_SUCC_001:PROCEED &quot;</span><span class="p">,</span> <span class="s2">&quot;XV: RTDOSE retrieval.&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;XV: RTDOSE retrieval: added 1 rtdose PLAN instances to the RTDOSE directory. &quot;</span><span class="p">,</span>
+        <span class="s2">&quot;XV: XV_SUCC_001: PROCEED&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;loading_notes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;XXI: load CT&quot;</span><span class="p">,</span> <span class="s2">&quot;XXI: XXI_SUCC_001: PROCEED&quot;</span><span class="p">,</span> <span class="s2">&quot;XXII: XXII loading masks&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;XXII: XXII loading masks: loaded the mask to numpy array:COMBLUNG&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;XXII: XXII loading masks: loaded the mask to numpy array:CTV&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;XXII: XXII loading masks: loaded the mask to numpy array:CTV_TUMOURBED&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;XXII: XXII loading masks: loaded the mask to numpy array:CTWIRE&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;XXII: XXII loading masks: loaded the mask to numpy array:External_ROI&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;XXII: XXII loading masks: loaded the mask to numpy array:Lung_L&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;XXII: XXII loading masks: loaded the mask to numpy array:Lung_R&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;XXII: XXII loading masks: loaded the mask to numpy array:PTV&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;XXII: XXII loading masks: loaded all the patient&#39;s masks.&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;XXII: XXII_SUCC_001:PROCEED&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;XXIII: XXIII loading RTDOSES&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;XXIII: XXIII loading RTDOSES: added an rt dose: 1.3.6.1.4.1.32722.3333333&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;XXIII: XXIII_SUCC_001: PROCEED&quot;</span><span class="p">,</span> <span class="s2">&quot;XXIV: XXIV select RTDOSES&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;XXIV: XXIV select RTDOSES: Maximum of rt doses: [46.318787]&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;XXIV: XXIV_SUCC_001:PROCEED&quot;</span><span class="p">],</span>
+     <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;SUCCESS&quot;</span><span class="p">,</span> <span class="s2">&quot;patientimagingfilesready&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-6-check-patients">
+<h2>Step 6: Check Patients<a class="headerlink" href="#step-6-check-patients" title="Permalink to this headline"></a></h2>
+<p>The successfully collected patients are patients who has the key patientimagingfilesready equal to true in the patient notes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span><span class="nn">os</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../PDCP/code/&#39;</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">PDCP</span> <span class="kn">import</span> <span class="n">ReadPatientImagingData</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="n">configfile</span><span class="o">=</span><span class="s1">&#39;codesconfig_test.json&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">configfile</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">read_file</span><span class="p">:</span>
+    <span class="n">conf</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">read_file</span><span class="p">)</span>
+
+<span class="n">patientnotes</span><span class="o">=</span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;patientnotesdir&#39;</span><span class="p">]</span>
+<span class="n">spatients</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">epatients</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">patientnotes</span><span class="p">):</span>
+    <span class="n">jsonfile</span><span class="o">=</span><span class="n">f</span><span class="s1">&#39;{patientnotes}{filename}&#39;</span>
+    <span class="n">pid</span><span class="o">=</span><span class="n">filename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.json&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">jsonfile</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">read_file</span><span class="p">:</span>
+        <span class="nb">file</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">read_file</span><span class="p">)</span>
+    <span class="n">patientimagingfilesready</span> <span class="o">=</span> <span class="nb">file</span><span class="p">[</span><span class="s1">&#39;patientimagingfilesready&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;patientimagingfilesready&#39;</span> <span class="ow">in</span> <span class="nb">file</span> <span class="k">else</span> <span class="bp">False</span>
+    <span class="k">if</span> <span class="n">patientimagingfilesready</span><span class="p">:</span>
+        <span class="n">spatients</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">epatients</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-7-generate-dosimetry-features">
+<h2>Step 7: Generate Dosimetry Features<a class="headerlink" href="#step-7-generate-dosimetry-features" title="Permalink to this headline"></a></h2>
+<p>Some dosimetry features can be generated for each generated mask at this stage and added to the patients directory.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span><span class="nn">os</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../PDCP/code/&#39;</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">PDCP</span> <span class="kn">import</span> <span class="n">DVH</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span><span class="nn">os</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../PDCP/code/&#39;</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">PDCP</span> <span class="kn">import</span> <span class="n">ReadPatientImagingData</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="n">configfile</span><span class="o">=</span><span class="s1">&#39;codesconfig_test.json&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">configfile</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">read_file</span><span class="p">:</span>
+    <span class="n">conf</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">read_file</span><span class="p">)</span>
+
+<span class="n">patientnotes</span><span class="o">=</span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;patientnotesdir&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">pid</span> <span class="ow">in</span> <span class="n">spatients</span><span class="p">:</span>
+    <span class="n">jsonfile</span><span class="o">=</span><span class="n">f</span><span class="s1">&#39;{patientnotes}{str(pid)}.json&#39;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">jsonfile</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">read_file</span><span class="p">:</span>
+        <span class="nb">file</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">read_file</span><span class="p">)</span>
+
+    <span class="n">patientimagingfilesready</span> <span class="o">=</span> <span class="nb">file</span><span class="p">[</span><span class="s1">&#39;patientimagingfilesready&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;patientimagingfilesready&#39;</span> <span class="ow">in</span> <span class="nb">file</span> <span class="k">else</span> <span class="bp">False</span>
+    <span class="k">if</span> <span class="n">patientimagingfilesready</span><span class="p">:</span>
+        <span class="n">adict</span><span class="o">=</span><span class="nb">file</span><span class="p">[</span><span class="s1">&#39;list_of_values&#39;</span><span class="p">]</span>
+
+
+    <span class="c1">#load patient imaging data into imagingdata</span>
+    <span class="n">imagingdata</span><span class="o">=</span><span class="n">ReadPatientImagingData</span><span class="o">.</span><span class="n">load_patient_images</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span><span class="n">adict</span><span class="p">,</span><span class="n">configfile</span><span class="p">)</span>
+
+
+    <span class="n">dvh</span><span class="o">=</span><span class="n">DVH</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+    <span class="n">prescribedDose</span><span class="o">=</span><span class="bp">None</span><span class="c1">#if we can get the prescribed dose at this stage.</span>
+    <span class="n">dvh_df</span><span class="o">=</span><span class="n">dvh</span><span class="o">.</span><span class="n">compute_dvh_data</span><span class="p">(</span><span class="n">imagingdata</span><span class="p">,</span><span class="n">prescribedDose</span><span class="p">)</span>
+
+    <span class="n">datadirectory</span><span class="o">=</span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datadirectory&#39;</span><span class="p">]</span>
+
+    <span class="n">dosimetrydir</span><span class="o">=</span><span class="n">f</span><span class="s1">&#39;{datadirectory}{str(pid)}/dosimetrydata/&#39;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">dosimetrydir</span><span class="p">):</span><span class="c1"># a directory that save all the patient&#39;s details</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">dosimetrydir</span><span class="p">)</span>
+    <span class="n">dvh_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;{dosimetrydir}/{str(pid)}_.csv&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For each patient the following directory will be obtained:</p>
+<a class="reference internal image-reference" href="_images/patientdirectory.png"><img alt="Alternative text" class="align-center" src="_images/patientdirectory.png" style="width: 400px; height: 400px;" /></a>
+</div>
+<div class="section" id="step-8-patients-in-quarantine">
+<h2>Step 8: Patients in Quarantine<a class="headerlink" href="#step-8-patients-in-quarantine" title="Permalink to this headline"></a></h2>
+<p>In most cases, patients will be in quarantine if they have mutliple studies with successful associations.
+In other words, patients with two studies ready to use. This can occure because:</p>
+<ul class="simple">
+<li><p>a patient might have two studies, where one of them is a rescan</p></li>
+<li><p>a patient might have multiple studies, representing multiple cancer treatments</p></li>
+</ul>
+<p>Those patients will need manual review to select the correct study that matches the project research question.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span><span class="o">,</span><span class="nn">os</span><span class="o">,</span><span class="nn">shutil</span><span class="o">,</span><span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../PDCP/code/&#39;</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">PDCP</span> <span class="kn">import</span> <span class="n">patientImagingCRDP</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">start</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">patients_ids</span><span class="o">=</span><span class="p">[]</span>
+
+<span class="n">configfile</span><span class="o">=</span><span class="s1">&#39;codesconfig_test.json&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">configfile</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">read_file</span><span class="p">:</span>
+        <span class="n">conf</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">read_file</span><span class="p">)</span>
+
+<span class="n">bcd</span><span class="o">=</span><span class="n">patientImagingCRDP</span><span class="p">(</span><span class="n">configfile</span><span class="p">)</span>
+
+<span class="n">thequarantine</span><span class="o">=</span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;thequarantine&#39;</span><span class="p">]</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">thequarantine</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">thequarantine</span><span class="p">)</span>
+<span class="n">imagesummaries</span><span class="o">=</span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;imagesummaries&#39;</span><span class="p">]</span>
+<span class="n">datadirectory</span><span class="o">=</span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;datadirectory&#39;</span><span class="p">]</span>
+<span class="n">patientnotesdir</span><span class="o">=</span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;patientnotesdir&#39;</span><span class="p">]</span>
+<span class="c1">#set the patients who were initially execluded in here.</span>
+<span class="n">patients_ids</span><span class="o">=</span><span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">patient</span> <span class="ow">in</span> <span class="n">patients_ids</span><span class="p">:</span><span class="c1">#for each patient who is in quarantine</span>
+        <span class="n">images</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;{imagesummaries}{str(patient)}_SUCCESS.csv&#39;</span><span class="p">)</span>
+        <span class="n">studies</span><span class="o">=</span><span class="n">images</span><span class="p">[</span><span class="s1">&#39;StudyInstanceUID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">astudy</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">studies</span><span class="p">):</span>
+                <span class="n">x</span><span class="o">=</span><span class="n">images</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">images</span><span class="p">[</span><span class="s1">&#39;StudyInstanceUID&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">astudy</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+                <span class="n">x</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;{imagesummaries}{str(patient)}_SUCCESS.csv&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+                <span class="n">patients_to_execlude</span><span class="p">,</span><span class="n">patients_to_review</span><span class="p">,</span><span class="n">patients_passed</span><span class="o">=</span><span class="n">bcd</span><span class="o">.</span><span class="n">generate_patients_data</span><span class="p">([</span><span class="n">patient</span><span class="p">])</span>
+                <span class="c1">#now copy the patients files to a new location</span>
+                <span class="n">destination</span><span class="o">=</span><span class="n">f</span><span class="s1">&#39;{thequarantine}{str(patient)}_{str(idx)}/&#39;</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">destination</span><span class="p">):</span>
+                        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">destination</span><span class="p">)</span>
+                <span class="n">source</span><span class="o">=</span><span class="n">f</span><span class="s1">&#39;{datadirectory}{str(patient)}&#39;</span>
+                 <span class="c1">#move the generated files</span>
+                <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
+                        <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">destination</span><span class="p">)</span>
+                <span class="c1">#move the notes</span>
+                <span class="n">source</span><span class="o">=</span><span class="n">f</span><span class="s1">&#39;{patientnotesdir}{str(patient)}.json&#39;</span>
+                <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
+                        <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">destination</span><span class="p">)</span>
+
+                <span class="c1">#move the image summary</span>
+                <span class="n">source</span><span class="o">=</span><span class="n">f</span><span class="s1">&#39;{imagesummaries}{str(patient)}_SUCCESS.csv&#39;</span>
+                <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
+                        <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">destination</span><span class="p">)</span>
+
+        <span class="c1">#move things back to normal</span>
+        <span class="n">images</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;{imagesummaries}{str(patient)}_SUCCESS.csv&#39;</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="n">finish</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;time taken for one patient: {finish-start}&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The studies will be created and mapped to the quarantine directory. Once the correct study is selected, it can be mapped into the <strong>data</strong> directory to be included in any further analyses.</p>
+</div>
+</div>
+<div class="section" id="pdcp">
+<h1>PDCP<a class="headerlink" href="#pdcp" title="Permalink to this headline"></a></h1>
+<span class="target" id="module-PDCP"></span><table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/PDCP.DVH.html#PDCP.DVH" title="PDCP.DVH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DVH</span></code></a>(pid)</p></td>
+<td><p>A class that computes the DVH features for each patient imaging files.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/PDCP.ROIP.html#PDCP.ROIP" title="PDCP.ROIP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ROIP</span></code></a>([ptype])</p></td>
+<td><p>A class to work with the patient’s organs at risk (OARs) and target volumes (TV)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/PDCP.ReadPatientImagingData.html#PDCP.ReadPatientImagingData" title="PDCP.ReadPatientImagingData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ReadPatientImagingData</span></code></a></p></td>
+<td><p>This class contains functions that read the patient directory.It collects the patients related data such as the ct_image, masks, roi names, pixel spacing.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/PDCP.patientImaging.html#PDCP.patientImaging" title="PDCP.patientImaging"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patientImaging</span></code></a>([codesconfig])</p></td>
+<td><p>A class that contains all the required functions to prepare and process patient records from an Orthanc server.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/PDCP.patientImagingCR.html#PDCP.patientImagingCR" title="PDCP.patientImagingCR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patientImagingCR</span></code></a>([codesconfig])</p></td>
+<td><p>This is the class used to collect the patients data where the CT &amp; the RTSTRUCT are only required.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/PDCP.patientImagingCRD.html#PDCP.patientImagingCRD" title="PDCP.patientImagingCRD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patientImagingCRD</span></code></a>([codesconfig])</p></td>
+<td><p>This is the class used to collect the patients data where the CT &amp; the RTSTRUCT &amp; RTDOSE are only required.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/PDCP.patientImagingCRDP.html#PDCP.patientImagingCRDP" title="PDCP.patientImagingCRDP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patientImagingCRDP</span></code></a>([codesconfig])</p></td>
+<td><p>This class was used to collect and process datasets where connections between CT, RTSTRUCTS,RTDOSES, PLANS are required.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api/PDCP.DVH.html" class="btn btn-neutral float-right" title="DVH" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Ali Haidar.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
