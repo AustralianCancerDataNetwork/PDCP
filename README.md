@@ -98,6 +98,12 @@ https://zenodo.org/record/5847536
 Documentation
 ================
 
+Linked Software Paper:
+
+Haidar, A.; Aly, F.; Holloway, L. PDCP: A Set of Tools for Extracting, Transforming, and Loading Radiotherapy Data from the Orthanc Research PACS. Software 2022, 1, 215-222. https://doi.org/10.3390/software1020009
+
+Code Documentation:
+
 https://australiancancerdatanetwork.github.io/PDCP/html/index.html
 
 
